@@ -21,7 +21,7 @@ This project originates from a simple game as shown below:
 
 Each player can draw a single continuous horizontal line with a length of 1 to 3, and the player who draws the last one wins.
 
-Here's an example of a winning position for the first player: since there are only 3 (an odd number of) single | left, the first player is guaranteed to draw the last line.
+Here's an example of a winning position for the first player: since there are only 3 (an odd number of) single `|` left, the first player is guaranteed to draw the last line.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~~&nbsp;|&nbsp;~~&nbsp;
 
@@ -43,7 +43,7 @@ The following configuration is a winning position for the second player, as all 
 
 #### Mathematical Representation of the Problem
 
-This problem can be simplified as follows: given an array `arr`, where each element represents an independent count of `|`, and a maximum horizontal line length `maxlen`, determine if the first player has a winning strategy.
+This problem can be simplified as follows: given an array `arr`, where each element represents an independent count of `|` , and a maximum horizontal line length `maxlen`, determine if the first player has a winning strategy.
 
 #### Solution
 
@@ -121,7 +121,7 @@ Unlike the misere NIM problem, it is challenging to apply this approach here, as
 
 每次可以画一条连续的横杠，长度为1-3，画最后一个的人赢。
 
-如下面是一个先手必胜的局面，因为只剩下3个（奇数个）单|，先手必然可以画最后一条横杠
+如下面是一个先手必胜的局面，因为只剩下3个（奇数个）单 `|` ，先手必然可以画最后一条横杠
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~~&nbsp;|&nbsp;~~&nbsp;
 
