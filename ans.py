@@ -36,6 +36,7 @@ if __name__ == '__main__':
     maxlen = 3  # maximum cut length
     maxval = 30  # maximum value of the array
     
+    print("SG values:")
     for ml in range(1, 6):
         print(f"maxlen={ml}", end=": ")
         preCal(sg, win, ml, maxval)
