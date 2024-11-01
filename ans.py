@@ -45,9 +45,10 @@ if __name__ == '__main__':
     while True:
         line = input("Enter the array(> 0): ")
         arr = list(map(int, line.split()))
-        if len(arr) == sum(arr):
-            print("ALL ONEs")
-            continue
+        # 尝试用SG函数解决last loss，处理一些特殊情况，但不太行
+        # if len(arr) == sum(arr):
+        #     print("ALL ONEs")
+        #     continue
         if max(arr) > maxval:
             maxval = max(arr)
             preCal(sg, win, maxlen, maxval)
