@@ -88,7 +88,7 @@ GG
 ```
 Here, we first set `maxlen` to 3 and display the SG function values for different lengths. We then input the current configuration.
 
-For example, when the configuration is `1 3 5 7`, it is a losing position, as any move results in the configuration `1 5 7`.
+For example, when the configuration is `1 3 5 7`, it is a losing position, so print("GG"). If we choose reduce 3 to 0, then we get `1 5 7`.
 
 In the configuration `1 5 7`, various winning moves are available, such as reducing 5 to 2 by crossing out 3, or splitting 5 into two independent groups of `1` and `3`.
 
@@ -185,7 +185,7 @@ GG
 ```
 首先指定`maxlen`为3，首先打印不同`maxlen`时的SG函数，然后开始输入当前局面。
 
-当局面为1 3 5 7 时是必败局面，走任意一步，到局面1 5 7
+当局面为1 3 5 7 时是必败局面，因此输出"GG"，走任意一步，比如说将3全部划掉，得到局面1 5 7
 
 局面1 5 7给出了多种可行解，比如将5划3个变成2，或5划掉中间1个得到独立的1 3，都是必胜解。
 
