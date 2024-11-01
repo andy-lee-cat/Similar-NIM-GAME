@@ -19,7 +19,7 @@ This project originates from a simple game as shown below:
 
 &nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;
 
-Each player can draw 1-3 horizontal lines, and the player who draws the last one wins.
+Each player can draw 1-3 consecutive horizontal lines, and the player who draws the last one wins.
 
 For example, the following is a winning position for the first player because only 3 single `|` are left, so the first player is guaranteed to reach the last line:
 
@@ -118,7 +118,7 @@ Unlike the reverse NIM problem, it is challenging to apply this approach here, a
 
 &nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;
 
-每次可以画1-3个横杠，画最后一个的人赢。
+每次可以画1-3个连续的横杠，画最后一个的人赢。
 
 如下面是一个先手必胜的局面，因为只剩下3个单|，先手必然走到最后一个
 
