@@ -19,9 +19,9 @@ This project originates from a simple game as shown below:
 
 &nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;
 
-Each player can draw 1-3 consecutive horizontal lines, and the player who draws the last one wins.
+Each player can draw a single continuous horizontal line with a length of 1 to 3, and the player who draws the last one wins.
 
-For example, the following is a winning position for the first player because only 3 single `|` are left, so the first player is guaranteed to reach the last line:
+Here's an example of a winning position for the first player: since there are only 3 (an odd number of) single | left, the first player is guaranteed to draw the last line.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~~&nbsp;|&nbsp;~~&nbsp;
 
@@ -43,7 +43,7 @@ The following configuration is a winning position for the second player, as all 
 
 #### Mathematical Representation of the Problem
 
-This problem can be simplified as follows: given an array `arr`, where each element represents the number of `|` in each separate group, and a maximum line length `maxlen`, determine if the first player has a winning strategy.
+This problem can be simplified as follows: given an array `arr`, where each element represents an independent count of `|`, and a maximum horizontal line length `maxlen`, determine if the first player has a winning strategy.
 
 #### Solution
 
@@ -54,6 +54,7 @@ In the script `ans.py`, you first input `maxlen`, followed by `arr`. If there ex
 Here’s a sample input-output sequence:
 ```
 Enter the maximum length of the subarray: 3
+SG values:
 maxlen=1: [0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
 maxlen=2: [0, 1, 2, 3, 1, 4, 3, 2, 1, 4]
 maxlen=3: [0, 1, 2, 3, 4, 1, 6, 3, 2, 1]
@@ -96,11 +97,11 @@ The following moves follow the same logic.
 
 #### Other Attempts
 
-Attempts were made to modify the rules so that the player who draws the last line loses, similar to a reverse NIM game. However, this poses challenges as defining the SG function becomes problematic.
+Attempts were made to modify the rules so that the player who draws the last line loses, similar to a misere Nim game [Misère Nim](https://www.hackerrank.com/challenges/misere-nim-1/problem). However, this poses challenges as defining the SG function becomes problematic.
 
-If 1 is a losing state, then `SG([1])=0`, but if `[1, 1]` is a winning state, `SG([1, 1]) != 0`. This contradicts the result of `SG([1, 1]) = SG([1]) ^ SG([1])`.
+If state [1] is a losing state, then `SG([1])=0`, but the state `[1, 1]` is a winning state, `SG([1, 1]) != 0`. This contradicts the result of `SG([1, 1]) = SG([1]) ^ SG([1])`.
 
-Unlike the reverse NIM problem, it is challenging to apply this approach here, as arbitrary values cannot be simplified to 1 or 0. This indicates that alternative methods might be needed to solve this problem.
+Unlike the misere NIM problem, it is challenging to apply this approach here, as arbitrary values cannot be simplified to 1 or 0. This indicates that alternative methods might be needed to solve this problem.
 
 ---
 
@@ -118,9 +119,9 @@ Unlike the reverse NIM problem, it is challenging to apply this approach here, a
 
 &nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;
 
-每次可以画1-3个连续的横杠，画最后一个的人赢。
+每次可以画一条连续的横杠，长度为1-3，画最后一个的人赢。
 
-如下面是一个先手必胜的局面，因为只剩下3个单|，先手必然走到最后一个
+如下面是一个先手必胜的局面，因为只剩下3个（奇数个）单|，先手必然可以画最后一条横杠
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~~&nbsp;|&nbsp;~~&nbsp;
 
@@ -141,7 +142,7 @@ Unlike the reverse NIM problem, it is challenging to apply this approach here, a
 ~~&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;~~&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;
 
 #### 问题数学表达
-这个问题可以简化为，给定一个数组`arr`，每个元素为相互独立的 | 个数，给定最大划线长度`maxlen`，问是否先手可取胜。
+这个问题可以简化为，给定一个数组`arr`，每个元素为相互独立的 | 个数，给定划线长度的最大值`maxlen`，问是否先手可取胜。
 
 #### 问题求解
 这个问题可以用SG函数辅助解答，不需要遍历所有情况。
@@ -151,6 +152,7 @@ Unlike the reverse NIM problem, it is challenging to apply this approach here, a
 如下是一组典型输入输出:
 ```
 Enter the maximum length of the subarray: 3
+SG values:
 maxlen=1: [0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
 maxlen=2: [0, 1, 2, 3, 1, 4, 3, 2, 1, 4]
 maxlen=3: [0, 1, 2, 3, 4, 1, 6, 3, 2, 1]
@@ -193,8 +195,8 @@ GG
 
 #### 其他尝试
 
-尝试修改为划掉最后一个的输，类比反NIM问题。但是这里存在问题，SG函数难以定义。
+尝试修改为划掉最后一个的输，类比反常NIM问题 [OI Wiki 反常游戏](https://next.oi-wiki.org/math/game-theory/misere-game/) 。但是这里存在问题，SG函数难以定义。
 
-1为必败态，则有`SG([1])=0`，但是又有[1, 1]为必胜态，应具有`SG([1, 1]) != 0`，这里与`SG([1, 1]) = SG([1]) ^ SG([1])`矛盾
+状态[1]为必败态，则有`SG([1])=0`，但是又有状态[1, 1]为必胜态，应具有`SG([1, 1]) != 0`，这里与`SG([1, 1]) = SG([1]) ^ SG([1])`矛盾
 
 类比反NIM问题，将全1单独讨论，但是反NIM问题可将任意大数字转化为1或0，而本问题不具备这个性质，因此可能需要其他工具解决这一问题。
