@@ -25,7 +25,7 @@ Here's an example of a winning position for the first player: since there are on
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~~&nbsp;|&nbsp;~~&nbsp;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~~&nbsp;|&nbsp;&nbsp;|&nbsp;~~&nbsp;|&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;~~&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;~~
 
 &nbsp;&nbsp;&nbsp;~~&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;~~&nbsp;|&nbsp;&nbsp;
 
@@ -125,7 +125,7 @@ Unlike the misere NIM problem, it is challenging to apply this approach here, as
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~~&nbsp;|&nbsp;~~&nbsp;
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~~&nbsp;|&nbsp;&nbsp;|&nbsp;~~&nbsp;|&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;~~&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;~~
 
 &nbsp;&nbsp;&nbsp;~~&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;~~&nbsp;|&nbsp;&nbsp;
 
