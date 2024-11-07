@@ -97,11 +97,15 @@ The following moves follow the same logic.
 
 #### Other Attempts
 
-Attempts were made to modify the rules so that the player who draws the last line loses, similar to a misere Nim game [Misère Nim](https://www.hackerrank.com/challenges/misere-nim-1/problem). However, this poses challenges as defining the SG function becomes problematic.
+Attempts were made to modify the rules so that the player who draws the last line loses, similar to a misere Nim game [Misère Nim](https://www.hackerrank.com/challenges/misere-nim-1/problem). However, there are issues here.
 
-If state [1] is a losing state, then `SG([1])=0`, but the state `[1, 1]` is a winning state, `SG([1, 1]) != 0`. This contradicts the result of `SG([1, 1]) = SG([1]) ^ SG([1])`.
+Analogous to the anti-NIM problem, if we discuss the cases where all sg=1 separately, the anti-NIM problem allows any large number to be converted into 1 or 0, but in this problem, such property only exists when considering the sg function of each number.
 
-Unlike the misere NIM problem, it is challenging to apply this approach here, as arbitrary values cannot be simplified to 1 or 0. This indicates that alternative methods might be needed to solve this problem.
+However, in the anti-NIM problem, sg=1 means that you can only operate on it once, but in this problem, sg=1 might mean it can be transformed into two independent parts of the same length.
+
+For example, when `maxlen=3`, `SG(5)=1` only means that this state can be transformed into `SG([2, 2])=0`, where the original sg=0 means no operations can be performed anymore, thus it can be ignored. We need to count the parity of the number of 1s. However, here sg=0 just means that the xor result of several segments is 0, it does not guarantee that no operations can be performed. In fact, under the `[2, 2]` state, the player can still make a move.
+
+This issue has not been fully resolved and may require further analysis.
 
 ---
 
@@ -195,8 +199,12 @@ GG
 
 #### 其他尝试
 
-尝试修改为划掉最后一个的输，类比反常NIM问题 [OI Wiki 反常游戏](https://next.oi-wiki.org/math/game-theory/misere-game/) 。但是这里存在问题，SG函数难以定义。
+尝试修改为划掉最后一个的输，类比反常NIM问题 [OI Wiki 反常游戏](https://next.oi-wiki.org/math/game-theory/misere-game/) 。但是这里存在问题。
 
-状态[1]为必败态，则有`SG([1])=0`，但是又有状态[1, 1]为必胜态，应具有`SG([1, 1]) != 0`，这里与`SG([1, 1]) = SG([1]) ^ SG([1])`矛盾
+类比反NIM问题，将全sg=1单独讨论，反NIM问题可将任意大数字转化为1或0，而本问题在考虑每个数字的sg函数时才具备这个性质。
 
-类比反NIM问题，将全1单独讨论，但是反NIM问题可将任意大数字转化为1或0，而本问题不具备这个性质，因此可能需要其他工具解决这一问题。
+但是反NIM问题的sg=1意味着只能在上面操作一次，但这个问题可能意味着sg=1可以转化成两段独立的长度相同的部分。
+
+如`maxlen=3`时，`SG(5)=1`仅仅以为着这个状态可以转化成`SG([2, 2])=0`，原始的sg=0以为着不能在上面进行操作了，因此可以忽略，统计1的个数的奇偶性，但是这里sg=0只是意味着几段数据异或的结果是0，不能保证在上面不能操作了，事实上`[2,2]`状态下，先手方还可以操作。
+
+这里这个问题还没有完全解决，可能还需要深入分析。
